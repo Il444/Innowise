@@ -12,7 +12,8 @@ def main():
     name = input(Fore.CYAN + "Как вас зовут? ")
     print(Fore.MAGENTA + f"Привет, {name}!")
 
-    print(Style.BRIGHT + Fore.WHITE + "Спасибо за использование программы!")
+    print(Style.BRIGHT + Fore.WHITE + "Это яркий белый текст")
+    print(Fore.GREEN + "Программа завершена успешно!")
 
 
 if __name__ == "__main__":
