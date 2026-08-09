@@ -19,7 +19,7 @@ def get_birth_year():
 
 def main():
     user_name = input("Enter your full name: ")
-    current_age = 2026 - birth_year
+    current_age = 2026 - get_birth_year()
     hobbies = []
     while True:
         hobby = input("Enter a favorite hobby or type 'stop' to finish: ")
@@ -28,11 +28,11 @@ def main():
         hobbies.append(hobby)
 
     life_stage = generate_profile(current_age)
-    dict = {"Name" : user_name, "Age" : current_age, "Life Stage" : life_stage, "Favorite Hobby" : hobbies}
+    user_profile = {"Name" : user_name, "Age" : current_age, "Life Stage" : life_stage, "Favorite Hobby" : hobbies}
 
     print("---")
     print("Profile Summary:")
-    for key, value in dict.items():
+    for key, value in user_profile.items():
         if key == "Favorite Hobby":
             if not value:
                 print("You didn't mention any hobbies.")
