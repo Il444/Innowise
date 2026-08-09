@@ -72,12 +72,23 @@ def create_and_print_profile(students_base):
     else:
         print("There are no students")
 
-def find_and_print_top_student(students_base):
-    max_average = get_info(students_base, "max_average")
+def is_empty(students_base):
     for student in students_base:
-        student_average = get_student_average(student)
-        if max_average == student_average:
-            print(f"The student with the highest average is {student['name']} with a grade 0f {max_average}")
+        if student["grades"]:
+            return False
+    return True
+
+def find_and_print_top_student(students_base):
+    empty = is_empty(students_base)
+    if not students_base:
+        print("There are no students")
+        return
+    if not empty:
+        top_student = max(students_base, key = lambda st: sum(st["grades"])/len(st["grades"]))
+        top_average = sum(top_student["grades"])/len(top_student["grades"])
+        print(f"The student with the highest average is {top_student['name']} with a grade of {top_average:.1f}.")
+    else:
+        print("No students with grades available")
 
 def main():
     students_base = []
