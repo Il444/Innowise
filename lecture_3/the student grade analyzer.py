@@ -47,8 +47,10 @@ def get_info(students_base, parameter):
                     max_average = student_average
                 if min_average > student_average:
                     min_average = student_average
-
-    overall_average /= count
+    if count > 0:
+        overall_average /= count
+    else:
+        overall_average = 0
     if parameter == "overall_average":
         return overall_average
     elif parameter == "max_average":
