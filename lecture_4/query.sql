@@ -43,3 +43,7 @@ INSERT INTO grades(student_id, subject, grade) VALUES(9, "Art", 92);
 Select * from students;
 
 Select students.full_name, grades.subject, grades.grade from grades JOIN students ON grades.student_id = students.id where students.full_name = "Alice Johnson";
+
+Select s.full_name, ROUND(AVG(g.grade), 2) as GPA from grades g JOIN students s ON g.student_id = s.id GROUP BY s.id ORDER BY -GPA;
+
+Select full_name as "Born after 2004" from students where birth_year > 2004;
