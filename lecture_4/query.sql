@@ -46,4 +46,4 @@ Select students.full_name, grades.subject, grades.grade from grades JOIN student
 
 Select s.full_name, ROUND(AVG(g.grade), 2) as GPA from grades g JOIN students s ON g.student_id = s.id GROUP BY s.id ORDER BY -GPA;
 
-Select full_name as "Born after 2004" from students where birth_year > 2004;
+Select full_name, birth_year from students where birth_year > 2004 ORDER BY birth_year;
