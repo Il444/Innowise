@@ -40,6 +40,13 @@ INSERT INTO grades(student_id, subject, grade) VALUES(9, "English", 96);
 INSERT INTO grades(student_id, subject, grade) VALUES(9, "Math", 89);
 INSERT INTO grades(student_id, subject, grade) VALUES(9, "Art", 92);
 
+CREATE INDEX Idx1 ON grades(student_id);
+CREATE INDEX Idx2 ON grades(grade);
+CREATE INDEX Idx3 ON grades(subject);
+CREATE INDEX Idx4 ON students(full_name);
+CREATE INDEX Idx5 ON students(birth_year);
+
+
 Select * from students;
 
 Select students.full_name, grades.subject, grades.grade from grades JOIN students ON grades.student_id = students.id where students.full_name = "Alice Johnson";
