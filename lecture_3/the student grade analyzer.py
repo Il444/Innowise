@@ -87,7 +87,7 @@ def find_and_print_top_student(students_base):
         return
     if not empty:
         top_student = max(students_base, key = lambda st: sum(st["grades"])/len(st["grades"]))
-        top_average = sum(top_student["grades"])/len(top_student["grades"])
+        top_average = get_student_average(top_student)
         print(f"The student with the highest average is {top_student['name']} with a grade of {top_average:.1f}.")
     else:
         print("No students with grades available")
