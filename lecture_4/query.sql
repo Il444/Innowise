@@ -47,3 +47,9 @@ Select students.full_name, grades.subject, grades.grade from grades JOIN student
 Select s.full_name, ROUND(AVG(g.grade), 2) as GPA from grades g JOIN students s ON g.student_id = s.id GROUP BY s.id ORDER BY -GPA;
 
 Select full_name, birth_year from students where birth_year > 2004 ORDER BY birth_year;
+
+Select subject, ROUND(AVG(grade), 2) as avg_grade from grades GROUP BY subject;
+
+Select s.full_name as top_students, ROUND(AVG(g.grade), 2) as avg_grade from grades g JOIN students s ON s.id = g.student_id GROUP BY s.id ORDER BY avg_grade DESC LIMIT 3;
+
+Select s.full_name, g.subject, g.grade from grades g JOIN students s ON s.id = g.student_id WHERE g.grade < 80;
